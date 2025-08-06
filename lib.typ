@@ -355,8 +355,8 @@
 #let imaging-slide(
   title: none,
   subtitle: none,
-  image-path: none,
-  image-width: 100pt,  // Changed to absolute value
+  picture: none,
+  picture-width: 100pt,  // Changed to absolute value
   ..args
 ) = touying-slide-wrapper(self => {
   let body = args.pos().at(0, default: none)
@@ -384,16 +384,16 @@
     }
     
     // Main content area with image and text side by side
-    if image-path != none or body != none {
+    if picture != none or body != none {
       grid(
-        columns: (image-width, 1fr),  
+        columns: (picture-width, 1fr),  
         column-gutter: 1em,
         
         // Left column: Image
-        if image-path != none {
-          align(left + top)[
-            #image(image-path, width: 100%)
-          ]
+        if picture != none {
+          set align(top + left)
+          set image(width: 100%)
+          picture
         } else {
           []
         },
@@ -470,11 +470,10 @@
         set text(size: 20pt, lang: "en")
         set par(justify: true)
         show math.equation: set text(size: 20pt)
-        // show strong: utils.alert-with-primary-color
-        
+
         body
       },
-      alert: utils.alert-with-primary-color,
+      alert: utils.alert-with-primary-color, // Uncomment to alert using primary color
     ),
     config-colors(
       primary: muw_colors.colors.dunkelblau,
