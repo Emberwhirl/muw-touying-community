@@ -1,7 +1,7 @@
 #import "@preview/touying:0.6.1": *
-#import "../colors.typ" as muw_colors
-#import "../lib.typ": *  
-// #import "@preview/muw-touying:0.1.1": *
+// #import "@preview/muw-touying-community:0.1.0": *
+#import "../lib.typ": *
+
 
 #set text(lang: "en")
 
@@ -17,8 +17,7 @@
   image: it => {align(center, it)}
 )
 
-// ///////////////////////////////////////////////
-
+// The slide starts here
 
 #title-slide-dunkelblau()
 
@@ -58,8 +57,8 @@ Version – white background
 #imaging-slide(
   title: [Slide „Titel und Inhalt – schwarz" (Title and content – black)],
   // subtitle: [Enter subtitle here],
-  image-path: "examples/example_brain_mri.png",
-  image-width: 123pt, 
+  picture: image("example_brain_mri.png"),
+  picture-width: 123pt, 
 )[
   - Especially for images in radiology
   - Enter explanation text – e.g. what can be seen in the picture
@@ -75,10 +74,10 @@ Version – white background
 
 
 == Slide „Bild mit Bildunterschrift“ (Picture and Caption)
-#image("example_wide_picture.png", 
-        width: 95%,     
-)
-#text(size: 12pt)[Default text colour black; can be changed to blue. Highlights: please use bold characters.]
+#image("example_wide_picture.png",
+       width: 95%)
+       
+#text(size: 12pt)[Default text colour black; can be changed to blue. Highlights: please use *bold* characters.]
 
 
 == Slide „Zwei Inhalte“ (Two content)
