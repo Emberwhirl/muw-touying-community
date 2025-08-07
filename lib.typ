@@ -13,6 +13,18 @@
     ..args
 )
 
+// Font
+#let sans_font = (
+  // "Lucida Sans",  // Comment for GitHub Actions compatibility
+  "Lucida Sans Unicode",  
+  "Trebuchet MS", 
+  "Noto Sans", 
+  )
+#let serif_font = (
+  "Georgia", 
+  "Charter", 
+  )
+
 
 // Custom footer function with proper logo selection
 #let muw-footer(
