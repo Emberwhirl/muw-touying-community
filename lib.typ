@@ -15,7 +15,7 @@
 
 // Font
 #let sans_font = (
-  // "Lucida Sans",  // Comment for GitHub Actions compatibility
+  "Lucida Sans",  // Comment for GitHub Actions compatibility
   "Lucida Sans Unicode",  
   "Trebuchet MS", 
   "Noto Sans", 
