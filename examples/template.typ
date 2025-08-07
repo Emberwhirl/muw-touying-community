@@ -99,13 +99,13 @@ Version – white background
   columns: (auto, auto),
   column-gutter: 3em,
 [
-#text(size: 20pt, font: "georgia", fill: muw_colors.colors.hellblau)[Headline for left column] \ 
+#text(size: 20pt, font: serif_font, fill: muw_colors.colors.hellblau)[Headline for left column] \ 
 - Left column for content 
   - Can contain text, charts, pictures, … 
 ],
 
 [
-#text(size: 20pt, font: "georgia", fill: muw_colors.colors.hellblau)[Headline for left column] \
+#text(size: 20pt, font: serif_font, fill: muw_colors.colors.hellblau)[Headline for left column] \
 - Right column for content 
   - Can contain text, charts, pictures, … 
 ]

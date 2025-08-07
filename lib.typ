@@ -13,6 +13,18 @@
     ..args
 )
 
+// Font
+#let sans_font = (
+  // "Lucida Sans",  // Comment for GitHub Actions compatibility
+  "Trebuchet MS", 
+  "Lucida Sans Unicode",  
+  "Noto Sans", 
+  )
+#let serif_font = (
+  "Georgia", 
+  "Charter", 
+  )
+
 
 // Custom footer function with proper logo selection
 #let muw-footer(
@@ -21,7 +33,7 @@
   show-date: true,
   page-numbering-fn: (current, total) => [#current / #total],
   page-numbering-start: 2,
-  footer-text-font: "lucida sans",
+  footer-text-font: sans_font,
 ) = context {
   let page-fill = page.fill
   let is-dark-bg = page-fill == muw_colors.colors.dunkelblau
@@ -126,7 +138,7 @@
   let body = {
     set align(left + horizon)
     set page(fill: muw_colors.colors.dunkelblau)
-    set text(fill: muw_colors.colors.white, font: "georgia")
+    set text(fill: muw_colors.colors.white, font: serif_font)
     set par(justify: true, leading: 0.5em, spacing: 1em)
     if info.title != none {
       block(
@@ -165,7 +177,7 @@
   let body = {
     set align(left + horizon)
     set page(fill: muw_colors.colors.white)
-    set text(fill: muw_colors.colors.dunkelblau, font: "georgia")
+    set text(fill: muw_colors.colors.dunkelblau, font: serif_font)
     set par(justify: true, leading: 0.5em, spacing: 1em)
     if info.title != none {
       block(
@@ -205,12 +217,12 @@
       set par(justify: true, spacing: 1em, first-line-indent: 0pt)
       block(
         inset: (left: 0.5em, top: 8em),
-        text(size: 42pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, utils.display-current-heading(level: 1))
+        text(size: 42pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, utils.display-current-heading(level: 1))
       )
       if body != none and body != [] {
         block(
           inset: (left: 0.5em),
-          text(size: 20pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, body)
+          text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, body)
         )
       }
   }
@@ -225,12 +237,12 @@
       set par(justify: true, spacing: 1em, first-line-indent: 0pt)
       block(
         inset: (left: 0.5em, top: 8em),
-        text(size: 42pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, title)
+        text(size: 42pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, title)
       )
       if subtitle != none and subtitle != [] {
         block(
           inset: (left: 0.5em),
-          text(size: 20pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, subtitle)
+          text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, subtitle)
         )
       }
   }
@@ -246,12 +258,12 @@
       set par(justify: true, spacing: 1em, first-line-indent: 0pt)
       block(
         inset: (left: 0.5em, top: 8em),
-        text(size: 42pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, title)
+        text(size: 42pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, title)
       )
       if subtitle != none and subtitle != [] {
         block(
           inset: (left: 0.5em),
-          text(size: 20pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, subtitle)
+          text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, subtitle)
         )
       }
   }
@@ -267,12 +279,12 @@
       set par(justify: true, spacing: 1em, first-line-indent: 0pt)
       block(
         inset: (left: 0.5em, top: 8em),
-        text(size: 42pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, title)
+        text(size: 42pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, title)
       )
       if subtitle != none and subtitle != [] {
         block(
           inset: (left: 0.5em),
-          text(size: 20pt, weight: "regular", fill: muw_colors.colors.dunkelblau, subtitle)
+          text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, subtitle)
         )
       }
   }
@@ -319,7 +331,7 @@
     if title != auto and title != none {
       block(
         inset: (left: 0.5em),
-        text(size: 27pt, weight: "regular", font: "georgia", fill: muw_colors.colors.dunkelblau, title)
+        text(size: 27pt, weight: "regular", font: serif_font, fill: muw_colors.colors.dunkelblau, title)
       )
     }
     
@@ -327,7 +339,7 @@
     if subtitle != auto and subtitle != none {
       block(
         inset: (left: 0.5em),
-        text(size: 20pt, weight: "regular", font: "georgia", fill: muw_colors.colors.hellblau, subtitle)
+        text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.hellblau, subtitle)
       )
     }
     
@@ -337,7 +349,7 @@
 
     // Display slide content
     if body != none {
-      set text(size: 17pt, weight: "regular", font: "lucida sans", fill: muw_colors.colors.black)
+      set text(size: 17pt, weight: "regular", font: sans_font, fill: muw_colors.colors.black)
       block(
         inset: (top: 0.5em, left: 0.5em, right: 0.5em),
         body
@@ -407,7 +419,7 @@
           align(left + top)[
             #block(
               inset: (top: 1em, left: 0em, right: 0.5em),
-              text(size: 17pt, weight: "regular", font: "lucida sans", fill: muw_colors.colors.white, body)
+              text(size: 17pt, weight: "regular", font: sans_font, fill: muw_colors.colors.white, body)
             )
           ]
         } else {

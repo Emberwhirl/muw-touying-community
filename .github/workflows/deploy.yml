@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ dev ]
 
 permissions:
   contents: read
@@ -29,6 +29,9 @@ jobs:
 
       - name: Install Touying Exporter
         run: pip install touying
+        
+      - name: Clone fonts repository
+        run: git clone https://github.com/touying-typ/fonts.git --depth=1
 
       - name: Build HTML File
         run: |
