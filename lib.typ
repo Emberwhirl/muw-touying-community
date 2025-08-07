@@ -374,16 +374,16 @@
   let body = args.pos().at(0, default: none)
   
   let slide-content = {
-    set align(left + top)
+    // set align(left + top)
     set page(fill: muw_colors.colors.black)
     set text(fill: muw_colors.colors.white)
-    set par(justify: true, leading:0.9em, first-line-indent: 0pt)
+    set par(justify: true, spacing: 0.9em, leading:0.9em, first-line-indent: 0pt)
     
     // Title
     if title != none {
       block(
         inset: (left: 0.5em),
-        text(size: 27pt, weight: "regular", fill: muw_colors.colors.white, title)
+        text(size: 27pt, weight: "regular", font: serif_font, fill: muw_colors.colors.white, title)
       )
     }
     
@@ -391,7 +391,7 @@
     if subtitle != none {
       block(
         inset: (left: 0.5em),
-        text(size: 20pt, weight: "regular", fill: muw_colors.colors.hellblau, subtitle)
+        text(size: 20pt, weight: "regular", font: serif_font, fill: muw_colors.colors.hellblau, subtitle)
       )
     }
     
@@ -431,24 +431,6 @@
   
   touying-slide(self: self, slide-content)
 })
-
-
-// Black slide for medical imaging
-#let imaging-slide-black(
-  bg-fill: black,
-  font-fill: white,
-  ..args,
-  body
-) = touying-slide-wrapper(self => {
-  let self = utils.merge-dicts(
-    self,
-    config-page(fill: bg-fill),
-  )
-  set text(fill: font-fill)
-  touying-slide(self: self, ..args, body)
-})
-
-
 
 
 // Define the MedUni Wien Touying theme
