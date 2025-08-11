@@ -4,7 +4,10 @@ This is a template built on [`Touying`](https://github.com/touying-typ/touying) 
 
 ## Disclaimer
 
-*This theme is __unofficial__. It is __NOT__ affiliated with Medizinischen Universität Wien (Medical University of Vienna). The logo is the intellectual property of the Medical University of Vienna and is subject to copyright. Users are advised to check the official Styleguide before using this template.*
+> [!CAUTION]
+> This theme is **unofficial**. It is **NOT** affiliated with Medizinischen Universität Wien (Medical University of Vienna). The logo is the intellectual property of the Medical University of Vienna and is subject to copyright. Users are advised to check the official Styleguide before using this template.
+>
+
 ## Examples
 
 See the [examples](examples) directory and the [GitHub Pages site](https://emberwhirl.github.io/muw-touying-community/) for usage demonstrations.
@@ -31,8 +34,8 @@ Use the following code as a starting point to create your own slides.
 
 ```typst
 #import "@preview/touying:0.6.1": *
-// #import "@preview/muw-touying-community:0.1.0": *
-#import "lib.typ": *
+#import "@preview/muw-touying-community:0.1.0": *
+// #import "lib.typ": *
 
 
 #set text(lang: "en")
