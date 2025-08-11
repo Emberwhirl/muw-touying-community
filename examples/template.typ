@@ -1,6 +1,6 @@
 #import "@preview/touying:0.6.1": *
-// #import "@preview/muw-touying-community:0.1.0": *
-#import "../lib.typ": *
+#import "@preview/muw-touying-community:0.1.0": *
+// #import "../lib.typ": *
 
 
 #set text(lang: "en")
